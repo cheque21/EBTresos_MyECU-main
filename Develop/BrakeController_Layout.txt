@@ -1,0 +1,19 @@
+BrakeController
+│
+├── SenderReceiverInterface
+│ └── BrakePosition_I
+│
+├── DataElement
+│ └── BrakePosition
+│
+├── P-Port
+│ └── BrakePosition_PPort
+│
+├── R-Port
+│ └── BrakePosition_RPort
+│
+├── Runnable
+│ └── BrakeRunnable
+│
+└── TimingEvent
+└── 10 ms
