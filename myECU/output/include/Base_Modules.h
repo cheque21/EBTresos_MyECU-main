@@ -51,6 +51,16 @@
 #define BASE_COMPILER_HEADER <Compiler.h>
 #endif
 
+#ifndef BASE_DET_ENABLED
+/** \brief Enable status of the module Det (/Det/Det) (VariantPreCompile) */
+#define BASE_DET_ENABLED STD_ON
+#endif
+
+#ifndef BASE_DET_HEADER
+/** \brief Name of the Det (/Det/Det) module's main header file */
+#define BASE_DET_HEADER <Det.h>
+#endif
+
 #ifndef BASE_MCALEXT_ENABLED
 /** \brief Enable status of the module McalExt (/McalExt/McalExt) (VariantPreCompile) */
 #define BASE_MCALEXT_ENABLED STD_ON

@@ -134,6 +134,24 @@
         <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
         <d:var name="SoftwareVersion" value="1.0.6 B428252"/>
       </d:ctr>
+      <d:ctr name="Det">
+        <d:var name="ModuleId" value="Det_TS_TxDxM6I5R0"/>
+        <d:var name="Enabled" value="TRUE"/>
+        <d:var name="Generate" value="TRUE"/>
+        <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
+        <d:var name="SoftwareVersion" value="6.5.5 B406795"/>
+        <d:var name="ConfigurationFileURL" value="config\Det.xdm"/>
+        <d:var name="ConfigurationFormat" value="xdm"/>
+        <d:var name="GenerationPath" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="PreConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="RecConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+      </d:ctr>
       <d:ctr name="Make">
         <d:var name="ConfigurationFileURL" value="config\Make.xdm"/>
         <d:var name="ConfigurationFormat" value="xdm"/>

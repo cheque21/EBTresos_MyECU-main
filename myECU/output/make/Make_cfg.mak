@@ -32,10 +32,10 @@ DERIVATE := TC32XL
 ifeq (,$(ENABLED_PLUGINS))
 # In case enabled modules are NOT specified explicitly
 # use all enabled modules (including modules, that are NOT generated)
-PROJECT_MODULES := Atomics Base BswM Compiler Make McalExt Platforms ResourceM
+PROJECT_MODULES := Atomics Base BswM Compiler Det Make McalExt Platforms ResourceM
 else
 # otherwise only use generated modules
-PROJECT_MODULES := Atomics Base BswM Compiler Make McalExt Platforms ResourceM
+PROJECT_MODULES := Atomics Base BswM Compiler Det Make McalExt Platforms ResourceM
 endif
 
 # add tresos2 make plugin if not yet contained in SOFTWARE_MODULES
@@ -55,6 +55,8 @@ BswM_VARIANT   := TS_TxDxM1I15R0
 BswM_CORE_PATH := $(TRESOS_BASE)/plugins/BswM_TS_TxDxM1I15R0
 Compiler_VARIANT   := TS_TxDxM1I0R0
 Compiler_CORE_PATH := $(TRESOS_BASE)/plugins/Compiler_TS_TxDxM1I0R0
+Det_VARIANT   := TS_TxDxM6I5R0
+Det_CORE_PATH := $(TRESOS_BASE)/plugins/Det_TS_TxDxM6I5R0
 Make_VARIANT   := TS_TxDxM4I0R0
 Make_CORE_PATH := $(TRESOS_BASE)/plugins/Make_TS_TxDxM4I0R0
 McalExt_VARIANT   := TS_T16D27M1I0R0
