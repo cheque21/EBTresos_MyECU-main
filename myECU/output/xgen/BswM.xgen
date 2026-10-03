@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?module BswM?>
+<xgen xmlns="http://www.elektrobit.com/2013/xgen" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <module name="BswM" version="1.15.5 B406795">
+        <configuration class="PreCompile">
+            <!-- only generate the contents of BswM_CfgTypes.h once, for the first variant -->
+            <?artifact type="types-h" directory="include" file="BswM_CfgTypes.h" generate="yes"?>
+
+            <parameter name="relocatable-enable">
+                <boolean-value>true</boolean-value>
+            </parameter>
+<type name="BswMActionListItemType">
+    <struct>
+        <member name="ArtifactIndex" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ActionListItemType" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="IsAbortOnFail" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="ActionType" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="BswMRangeType">
+    <struct>
+        <member name="Head" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="Tail" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="BswMActionListType">
+    <struct>
+        <member name="ActionListItemSegment" type="BswMRangeType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="IsTriggered" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="BswMRuleType">
+    <struct>
+        <member name="ID" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="LogicalExprIndex" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="TrueActionListIndex" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="FalseActionListIndex" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="RuleInitState" type="uint8">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="BswM_ConfigType">
+    <struct>
+        <member name="RuleTable" type="BswMRuleType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="RuleDependencyTable" type="uint16">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="RuleDependencyListRangeTable" type="BswMRangeType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ActionListTable" type="BswMActionListType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="ActionListItemTable" type="BswMActionListItemType">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="UInt8InitialValuesTable" type="uint8">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="UInt16InitialValuesTable" type="uint16">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="UInt32InitialValuesTable" type="uint32">
+            <compiler-abstraction>
+                <ref2cfg/>
+            </compiler-abstraction>
+        </member>
+        <member name="PlatformSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="LcfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="CfgSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="PublicInfoSignature" type="uint32">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="NumRules" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="NumRulesDeferred" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+        <member name="NumActionLists" type="uint16">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+
+
+        </configuration>
+        <configuration class="PostBuild">
+            <?artifact type="postbuild-h" directory="include" file="BswM_PBcfg.h" generate="yes"?>
+            <?artifact type="postbuild-c" directory="src" file="BswM_PBcfg.c" generate="yes"?>
+<type name="BswM_ConfigLayoutType">
+    <struct>
+        <member count="1" name="BswM_RootConfig" type="BswM_ConfigType">
+            <compiler-abstraction>
+                <var memory-class="TYPEDEF"/>
+            </compiler-abstraction>
+        </member>
+    </struct>
+</type>
+<type name="BswM_ConstConfigLayoutType">
+    <reference type="BswM_ConfigLayoutType">
+        <compiler-abstraction>
+            <const memory-class="TYPEDEF"/>
+        </compiler-abstraction>
+    </reference>
+</type>
+
+
+            <memory-section name="CONFIG_DATA_UNSPECIFIED">
+            <parameter name="postbuild-configuration-name.BswM_ConfigLayout">
+                <symbolic-value>BSWM_PB_CFG_NAME</symbolic-value>
+            </parameter><instance name="BswM_ConfigLayout" type="BswM_ConstConfigLayoutType">
+    <parameter name="postbuild-configuration-name">
+        <parameter reference="postbuild-configuration-name.BswM_ConfigLayout"/>
+    </parameter>
+    <compiler-abstraction>
+        <var memory-class="BSWM_CONST"/>
+    </compiler-abstraction>
+    <field>
+        <field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <ref/>
+            </field>
+            <field>
+                <int>2281703698</int>
+            </field>
+            <field>
+                <int>3958107115</int>
+            </field>
+            <field>
+                <int>1929423376</int>
+            </field>
+            <field>
+                <int>3584992773</int>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+            <field>
+                <int>0</int>
+            </field>
+        </field>
+    </field>
+</instance>
+
+
+            </memory-section>
+        </configuration>
+        <configuration class="PostBuild">
+            <?artifact type="int-h" directory="include" file="BswM_Int_Cfg.h" generate="no"?>
+            <!-- The following symbols are currently undefined and, in case
+                 of a Postbuild binary generation, will yield a generate error.
+                 This is a failsafe measure.
+            -->
+        </configuration>
+    </module>
+  <xi:include href="Base.xgen" xpointer="element(/1/1)" />
+</xgen>
